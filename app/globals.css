@@ -22,4 +22,23 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   letter-spacing: -0.01em;
+  /* 한글은 어절(띄어쓰기) 단위로만 줄바꿈 — 글자 단위로 꺾여
+     한두 글자가 다음 줄로 넘어가는 것을 방지 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 제목: 줄 길이를 고르게 분배해 마지막 줄에 짧은 꼬리가 남지 않게 */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* 본문: 외톨이 단어(orphan)가 마지막 줄에 홀로 남는 것을 완화 */
+p,
+li,
+blockquote,
+figcaption {
+  text-wrap: pretty;
 }
