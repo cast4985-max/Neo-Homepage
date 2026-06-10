@@ -50,13 +50,6 @@ function HatchHeading() {
 export default function TechLeadership() {
   const t = useT();
 
-  const stats = [
-    { value: t("32건", "32"), label: t("AI 관련 등록 특허", "registered AI patents") },
-    { value: t("18편", "18"), label: t("국제 학회 논문", "international conference papers") },
-    { value: "47%", label: t("R&D 인력 비중", "of our team works in R&D") },
-    { value: t("11개", "11"), label: t("자체 개발 AI 모델", "proprietary AI models") },
-  ];
-
   const pillars = [
     {
       title: t("전문가의 통찰", "Expert insight"),
@@ -88,30 +81,19 @@ export default function TechLeadership() {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-20">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-[44px] lg:leading-[1.15]">
-            {t("압도적인 AI 기술력으로", "Leading the global market")}
+            {t("현장에서 검증한 AI 기술로", "Field-tested AI for the")}
             <br />
-            {t("글로벌 시장을 선도합니다", "with superior AI technology")}
+            {t("한·미·중 물류를 연결합니다", "Korea–US–China corridor")}
           </h2>
           <p className="max-w-md text-lg leading-relaxed text-gray-600 lg:justify-self-end lg:self-end">
             {t(
-              "전문가의 통찰에 AI를 더했습니다. 산업마다 다른 현장의 문제를 정확히 정의하고, 자체 개발한 AI 기술로 측정 가능한 성과를 만듭니다.",
-              "Expert insight, plus AI. We precisely define each industry's field problems and turn them into measurable results with AI technology we built ourselves.",
+              "전문가의 통찰에 AI를 더했습니다. 산업마다 다른 현장의 문제를 정확히 정의하고, 직접 만든 AI 기술로 꾸준히 개선해 나갑니다.",
+              "Expert insight, plus AI. We carefully define each industry's field problems and keep improving with AI technology we build ourselves.",
             )}
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-10 border-t border-gray-200 pt-10 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <p className="text-4xl font-bold tracking-tight sm:text-5xl">
-                {stat.value}
-              </p>
-              <p className="mt-2 text-gray-600">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-14 grid gap-4 md:grid-cols-3">
+        <div className="mt-14 grid gap-4 border-t border-gray-200 pt-10 md:grid-cols-3">
           {pillars.map((pillar, i) => (
             <div key={pillar.title} className="rounded-lg bg-[#f6f6f6] p-8">
               <span className="inline-flex text-black [&>svg]:h-9 [&>svg]:w-9">

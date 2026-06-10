@@ -29,14 +29,17 @@ export default function BusinessSection() {
   const t = useT();
 
   const stats = [
-    { value: "2,800+", label: t("Neo를 사용하는 기업", "companies run on Neo") },
     {
       value: t("한·미·중", "3 countries"),
       label: t("직항 물류 네트워크", "Korea–US–China direct network"),
     },
     {
-      value: t("4명 중 3명", "3 out of 4"),
-      label: t("동료에게 추천하는 고객", "customers recommend us"),
+      value: t("3개 거점", "3 hubs"),
+      label: t("서울 · 로스앤젤레스 · 상하이", "Seoul · Los Angeles · Shanghai"),
+    },
+    {
+      value: t("1:1 지원", "1-on-1"),
+      label: t("전담 매니저 배정", "dedicated account manager"),
     },
   ];
 

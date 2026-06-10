@@ -7,24 +7,24 @@ export default function Recognition() {
 
   const badges = [
     {
-      title: t("무역의 날 표창", "Trade Day Commendation"),
+      title: t("보안 중심 운영", "Security-first operations"),
       description: t(
-        "2025년 수출 디지털 전환 부문",
-        "2025 export digital transformation category",
+        "거래 데이터 암호화와 접근 통제를 기본으로 운영합니다",
+        "Trade data encryption and access controls, by default",
       ),
     },
     {
-      title: t("글로벌 클라우드 파트너", "Global Cloud Partner"),
+      title: t("규정 준수", "Compliance"),
       description: t(
-        "올해의 트레이드테크 파트너 선정",
-        "Named TradeTech Partner of the Year",
+        "한·미·중 통관 및 무역 규정에 맞춰 프로세스를 설계합니다",
+        "Processes built around Korea, US, and China trade regulations",
       ),
     },
     {
-      title: "ISO 27001 · SOC 2",
+      title: t("지속 가능성", "Sustainability"),
       description: t(
-        "국제 정보보안 인증 획득",
-        "International security certifications",
+        "운송 구간별 탄소 배출을 측정하고 줄이는 방법을 찾습니다",
+        "We measure transport emissions and look for ways to reduce them",
       ),
     },
   ];
@@ -33,10 +33,7 @@ export default function Recognition() {
     <section className="bg-black text-white">
       <div className="mx-auto max-w-[1280px] px-4 py-16 lg:px-8 lg:py-20">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          {t(
-            "시장이 인정한 트레이드테크 리더",
-            "A TradeTech leader recognized by the market",
-          )}
+          {t("신뢰를 만드는 운영 원칙", "How we earn your trust")}
         </h2>
         <div className="mt-12 grid gap-10 md:grid-cols-3">
           {badges.map((badge) => (

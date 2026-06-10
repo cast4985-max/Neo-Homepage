@@ -9,38 +9,38 @@ export default function Outcomes() {
   const outcomes = [
     {
       industry: t("철강 · 금속", "Steel & Metals"),
-      metric: "47%",
-      label: t("서류 처리 시간 단축", "less time on documents"),
+      metric: t("서류 자동화", "Less paperwork"),
+      label: t("선적 서류, 시스템이 처리합니다", "Shipping documents, handled by the system"),
       description: t(
-        "선적 서류 자동화로 건당 처리 시간을 절반 가까이 줄였습니다.",
-        "Automated shipping documents cut processing time per shipment nearly in half.",
+        "선적 서류 작성과 검토를 자동화해 건당 처리 시간을 줄입니다.",
+        "Automate drafting and review of shipping documents to cut time per shipment.",
       ),
     },
     {
       industry: t("식품 · 농산물", "Food & Agriculture"),
-      metric: t("3주", "3 wks"),
-      label: t("신규 바이어 발굴 기간", "to find new buyers"),
+      metric: t("바이어 발굴", "Faster matching"),
+      label: t("미국·중국 바이어를 더 빠르게", "Reach US and China buyers sooner"),
       description: t(
-        "평균 6개월 걸리던 미국·중국 바이어 발굴을 3주로 단축했습니다.",
-        "Finding US and China buyers used to take 6 months. Now it takes 3 weeks.",
+        "거래 이력 데이터를 바탕으로 검증된 바이어를 연결합니다.",
+        "Get connected to vetted buyers based on trade history data.",
       ),
     },
     {
       industry: t("화학 · 소재", "Chemicals & Materials"),
-      metric: "19%",
-      label: t("재고 비용 절감", "lower inventory costs"),
+      metric: t("재고 최적화", "Smarter inventory"),
+      label: t("매입 타이밍을 데이터로", "Time your purchases with data"),
       description: t(
-        "AI 수요 예측으로 원자재 매입 타이밍을 최적화했습니다.",
-        "AI demand forecasting optimized raw-material purchase timing.",
+        "AI 수요 예측으로 원자재 매입 타이밍과 재고 수준을 관리합니다.",
+        "Manage purchase timing and stock levels with AI demand forecasting.",
       ),
     },
     {
       industry: t("전자 · 부품", "Electronics & Components"),
-      metric: "99.8%",
-      label: t("정시 선적률", "on-time shipping rate"),
+      metric: t("납기 관리", "Reliable delivery"),
+      label: t("지연 리스크를 미리 줄입니다", "Reduce delay risk before it happens"),
       description: t(
-        "복합 운송 경로 최적화로 납기 지연을 사실상 없앴습니다.",
-        "Multimodal route optimization virtually eliminated delivery delays.",
+        "복합 운송 경로를 최적화하고 이상 징후를 조기에 알립니다.",
+        "Optimize multimodal routes and flag potential delays early.",
       ),
     },
   ];
@@ -49,7 +49,7 @@ export default function Outcomes() {
     <section id="solutions" className="bg-white">
       <div className="mx-auto max-w-[1280px] px-4 py-16 lg:px-8 lg:py-24">
         <h2 className="max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-[44px] lg:leading-[1.15]">
-          {t("산업별로 증명된 성과", "Proven results across industries")}
+          {t("산업별 활용 방법", "How industries use Neo")}
         </h2>
         <p className="mt-4 max-w-xl text-lg text-gray-600">
           {t(
@@ -63,7 +63,7 @@ export default function Outcomes() {
               <p className="text-sm font-bold uppercase tracking-widest text-gray-500">
                 {item.industry}
               </p>
-              <p className="mt-4 text-5xl font-bold tracking-tight">{item.metric}</p>
+              <p className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{item.metric}</p>
               <p className="mt-2 text-lg font-bold">{item.label}</p>
               <p className="mt-3 leading-relaxed text-gray-600">{item.description}</p>
               <Link

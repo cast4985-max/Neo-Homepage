@@ -155,7 +155,7 @@ export default function Hero() {
               <div className="mt-6 flex items-center gap-5">
                 <Link
                   href="#contact"
-                  className="rounded-lg bg-black px-7 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-80"
+                  className="whitespace-nowrap rounded-lg bg-black px-7 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-80"
                 >
                   {t("견적 보기", "See quotes")}
                 </Link>

@@ -31,8 +31,8 @@ export default function PartnerSections() {
             </h2>
             <p className="mt-5 max-w-md text-lg leading-relaxed text-gray-600">
               {t(
-                "한국·미국·중국 전역의 2,800개 검증된 파트너사가 기다리고 있습니다. 신용 등급과 거래 이력을 확인하고 안심하고 첫 거래를 시작하세요.",
-                "2,800 verified partners across Korea, the US, and China are waiting. Check credit ratings and trade history, then start your first deal with confidence.",
+                "한국·미국·중국 전역의 검증된 파트너 네트워크를 연결해 드립니다. 거래 이력을 확인하고 안심하고 첫 거래를 시작하세요.",
+                "We connect you to a vetted partner network across Korea, the US, and China. Review trade history and start your first deal with confidence.",
               )}
             </p>
             <div className="mt-8 flex items-center gap-5">

@@ -118,12 +118,36 @@ export default function Footer() {
               </svg>
               {lang === "en" ? "English" : "한국어"}
             </button>
-            <button type="button" className="flex items-center gap-2 transition-colors hover:text-gray-300">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
-                <path d="M7 0a5 5 0 0 1 5 5c0 3.75-5 9-5 9S2 8.75 2 5a5 5 0 0 1 5-5zm0 6.5A1.5 1.5 0 1 0 7 3.5a1.5 1.5 0 0 0 0 3z" />
-              </svg>
-              {t("서울", "Seoul")}
-            </button>
+            {/* 허브 라우트: 서울 — LA — 상하이 */}
+            <div
+              className="flex flex-wrap items-center gap-3"
+              aria-label={t(
+                "물류 허브: 서울, 로스앤젤레스, 상하이",
+                "Logistics hubs: Seoul, Los Angeles, Shanghai",
+              )}
+            >
+              {[
+                t("서울", "Seoul"),
+                t("로스앤젤레스", "Los Angeles"),
+                t("상하이", "Shanghai"),
+              ].map((city, i) => (
+                <span key={city} className="flex items-center gap-3">
+                  {i > 0 && (
+                    <span className="flex items-center gap-1" aria-hidden="true">
+                      <span className="h-1 w-1 rounded-full bg-gray-500" />
+                      <span className="h-px w-5 bg-gray-500" />
+                      <span className="h-1 w-1 rounded-full bg-gray-500" />
+                    </span>
+                  )}
+                  <span className="flex items-center gap-1.5">
+                    <svg width="13" height="13" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
+                      <path d="M7 0a5 5 0 0 1 5 5c0 3.75-5 9-5 9S2 8.75 2 5a5 5 0 0 1 5-5zm0 6.5A1.5 1.5 0 1 0 7 3.5a1.5 1.5 0 0 0 0 3z" />
+                    </svg>
+                    {city}
+                  </span>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 

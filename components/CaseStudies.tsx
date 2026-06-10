@@ -9,7 +9,7 @@ export default function CaseStudies() {
 
   const cases = [
     {
-      tag: t("케이스 스터디 01", "Case study 01"),
+      tag: t("활용 사례 01", "Use case 01"),
       title: t(
         "창고 원자재 입출고를 AI가 추적합니다",
         "AI tracks raw materials in and out of your warehouse",
@@ -31,7 +31,7 @@ export default function CaseStudies() {
       ),
     },
     {
-      tag: t("케이스 스터디 02", "Case study 02"),
+      tag: t("활용 사례 02", "Use case 02"),
       title: t(
         "바코드·라벨 검수를 자동화합니다",
         "Barcode and label inspection, automated",

@@ -19,8 +19,8 @@ export default function LogoCloud() {
       <div className="mx-auto max-w-[1280px] px-4 py-14 lg:px-8">
         <p className="text-center text-sm font-medium text-gray-500">
           {t(
-            "국내외 선도 기업들이 Neo Trading Network와 함께합니다",
-            "Leading companies at home and abroad trust Neo Trading Network",
+            "다양한 산업의 기업들과 함께하고 있습니다",
+            "Working with companies across many industries",
           )}
         </p>
         <div className="mt-8 grid grid-cols-2 items-center gap-x-8 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
