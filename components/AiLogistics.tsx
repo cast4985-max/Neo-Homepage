@@ -7,53 +7,61 @@ export default function AiLogistics() {
 
   const focuses = [
     {
-      title: t("화물 자동 분류", "Automated cargo sorting"),
+      stat: "99.1%",
+      title: t("화물 자동 분류 정확도", "Cargo sorting accuracy"),
       description: t(
-        "크기·형태·색상 기준으로 화물을 분류해 적재 효율을 높입니다.",
-        "Sort cargo by size, shape, and color to load more efficiently.",
+        "크기·형태·색상 기준 분류로 적재 효율을 높입니다.",
+        "Sorting by size, shape, and color loads containers tighter.",
       ),
     },
     {
-      title: t("라벨·바코드 인식", "Label & barcode recognition"),
+      stat: "0.3s",
+      title: t("라벨·바코드 판독 속도", "Label & barcode read time"),
       description: t(
-        "라벨과 바코드를 자동 판독해 검수 누락을 줄입니다.",
-        "Read labels and barcodes automatically to reduce missed inspections.",
+        "검수 누락과 오출고를 출고 단계에서 차단합니다.",
+        "Missed inspections and wrong shipments stop at the door.",
       ),
     },
     {
-      title: t("입출고 추적", "Inbound & outbound tracking"),
+      stat: "100%",
+      title: t("입출고 이력 데이터화", "In/out movements recorded"),
       description: t(
-        "창고 안 화물의 위치와 이동을 데이터로 기록합니다.",
-        "Record the location and movement of cargo as data.",
+        "창고 안 화물의 위치와 이동이 전부 데이터로 남습니다.",
+        "Every cargo movement inside the warehouse becomes data.",
       ),
     },
   ];
 
   return (
-    <section id="logistics" className="bg-black text-white">
-      <div className="mx-auto max-w-[1280px] px-4 py-16 lg:px-8 lg:py-24">
-        <p className="text-sm font-bold uppercase tracking-widest text-gray-400">
-          {t("물류 AI", "Logistics AI")}
-        </p>
-        <h2 className="mt-4 max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-[44px] lg:leading-[1.15]">
-          {t("AI가 물류 현장의", "AI raises the productivity")}
-          <br />
-          {t("생산성을 끌어올립니다", "of your logistics floor")}
-        </h2>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">
-          {t(
-            "화물 자동 분류, 라벨·바코드 인식, 로봇 피킹까지. 현장에서 수집한 실데이터로 학습한 AI 모델이 창고와 항만의 반복 작업을 자동화합니다.",
-            "Automated cargo sorting, label and barcode recognition, robotic picking. AI models trained on real field data automate repetitive work in warehouses and ports.",
-          )}
-        </p>
+    <section id="logistics" className="bg-paper-warm">
+      <div className="mx-auto grid max-w-[1280px] gap-12 px-4 py-20 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:px-8 lg:py-28">
+        <div>
+          <p className="text-sm font-bold text-accent">{t("물류 AI", "Logistics AI")}</p>
+          <h2 className="mt-3 text-3xl font-extrabold leading-snug tracking-tight sm:text-4xl">
+            {t("현장에서 학습한 AI가", "AI trained on the floor")}
+            <br />
+            {t("반복 작업을 걷어냅니다", "takes over the repetitive work")}
+          </h2>
+          <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-soft">
+            {t(
+              "화물 자동 분류, 라벨·바코드 인식, 로봇 피킹까지 — 실데이터로 학습한 모델이 창고와 항만의 생산성을 끌어올립니다.",
+              "Automated sorting, label and barcode recognition, robotic picking — models trained on real field data raise warehouse and port productivity.",
+            )}
+          </p>
+        </div>
 
-        <div className="mt-14 grid gap-10 border-t border-white/20 pt-10 md:grid-cols-3">
+        <div className="flex flex-col divide-y divide-line border-y border-line">
           {focuses.map((focus) => (
-            <div key={focus.title}>
-              <p className="text-xl font-bold sm:text-2xl">{focus.title}</p>
-              <p className="mt-3 text-base leading-relaxed text-gray-400">
-                {focus.description}
+            <div key={focus.title} className="flex items-baseline gap-8 py-7">
+              <p className="w-28 shrink-0 text-3xl font-extrabold tracking-tight">
+                {focus.stat}
               </p>
+              <div>
+                <h3 className="text-lg font-extrabold">{focus.title}</h3>
+                <p className="mt-1.5 text-[15px] leading-relaxed text-ink-soft">
+                  {focus.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

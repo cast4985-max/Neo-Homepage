@@ -19,14 +19,11 @@ const LanguageContext = createContext<{
 });
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
+  // 항상 영어로 시작 — 세션 중 토글만 유지하고 저장값은 복원하지 않는다
   const [lang, setLangState] = useState<Lang>("en");
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("lang");
-    if (saved === "en" || saved === "ko") {
-      setLangState(saved);
-      document.documentElement.lang = saved;
-    }
+    document.documentElement.lang = "en";
   }, []);
 
   const setLang = useCallback((next: Lang) => {

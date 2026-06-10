@@ -9,7 +9,6 @@ export default function CaseStudies() {
 
   const cases = [
     {
-      tag: t("활용 사례 01", "Use case 01"),
       title: t(
         "창고 원자재 입출고를 AI가 추적합니다",
         "AI tracks raw materials in and out of your warehouse",
@@ -23,15 +22,10 @@ export default function CaseStudies() {
         t("이동 경로 실시간 추적", "Real-time movement tracking"),
         t("보관 위치 자동 배정", "Automatic storage assignment"),
       ],
-      image:
-        "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=80",
-      alt: t(
-        "선반이 늘어선 대형 물류 창고 내부",
-        "Inside a large warehouse lined with shelving",
-      ),
+      image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1200&q=80",
+      alt: t("선반이 늘어선 대형 물류 창고 내부", "Inside a large warehouse lined with shelving"),
     },
     {
-      tag: t("활용 사례 02", "Use case 02"),
       title: t(
         "바코드·라벨 검수를 자동화합니다",
         "Barcode and label inspection, automated",
@@ -45,32 +39,22 @@ export default function CaseStudies() {
         t("바코드 자동 판독", "Automatic barcode reading"),
         t("라벨 문자 인식(OCR)", "Label text recognition (OCR)"),
       ],
-      image:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80",
-      alt: t(
-        "오렌지색 랙이 설치된 물류 센터",
-        "A fulfillment center with orange racking",
-      ),
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
+      alt: t("검수 데이터 차트가 띄워진 노트북 화면", "A laptop showing inspection data charts"),
     },
   ];
 
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[1280px] px-4 py-16 lg:px-8 lg:py-24">
-        <h2 className="max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl lg:text-[44px] lg:leading-[1.15]">
-          {t("현장에서 증명된", "Logistics AI solutions")}
-          <br />
-          {t("물류 AI 솔루션", "proven on the floor")}
+      <div className="mx-auto max-w-[1280px] px-4 py-20 lg:px-8 lg:py-28">
+        <h2 className="max-w-2xl text-3xl font-extrabold tracking-tight sm:text-4xl">
+          {t("현장에서 증명된 물류 AI", "Logistics AI proven on the floor")}
         </h2>
-        <div className="mt-12 flex flex-col gap-16 lg:gap-24">
+
+        <div className="mt-14 flex flex-col gap-20 lg:gap-24">
           {cases.map((item, i) => (
-            <div
-              key={item.tag}
-              className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20"
-            >
-              <div
-                className={`relative aspect-[4/3] overflow-hidden rounded-lg ${i % 2 === 1 ? "lg:order-2" : ""}`}
-              >
+            <div key={item.title} className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
+              <div className={`relative aspect-[4/3] overflow-hidden rounded-lg ${i % 2 === 1 ? "lg:order-2" : ""}`}>
                 <Image
                   src={item.image}
                   alt={item.alt}
@@ -80,29 +64,25 @@ export default function CaseStudies() {
                 />
               </div>
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                <p className="text-sm font-bold uppercase tracking-widest text-gray-500">
-                  {item.tag}
-                </p>
-                <h3 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+                <h3 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
                   {item.title}
                 </h3>
-                <p className="mt-4 max-w-md text-lg leading-relaxed text-gray-600">
+                <p className="mt-4 max-w-md text-lg leading-relaxed text-ink-soft">
                   {item.description}
                 </p>
-                <ul className="mt-6 flex flex-col gap-3">
+                <ul className="mt-7 flex flex-col gap-3">
                   {item.points.map((point) => (
-                    <li key={point} className="flex items-center gap-3">
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                        <circle cx="9" cy="9" r="9" fill="#000" />
-                        <path d="M5.5 9l2.5 2.5L13 6.5" stroke="#fff" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                    <li key={point} className="flex items-center gap-3 font-medium">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="shrink-0" aria-hidden="true">
+                        <path d="M3.5 9.5l3.5 3.5 7.5-8" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
-                      <span className="font-medium">{point}</span>
+                      {point}
                     </li>
                   ))}
                 </ul>
                 <Link
                   href="#contact"
-                  className="mt-8 inline-flex rounded-lg bg-black px-6 py-3 text-base font-medium text-white transition-opacity hover:opacity-80"
+                  className="mt-8 inline-flex rounded bg-accent px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-accent-deep"
                 >
                   {t("솔루션 상담하기", "Talk to an expert")}
                 </Link>

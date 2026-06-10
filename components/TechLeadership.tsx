@@ -2,105 +2,59 @@
 
 import { useT } from "@/components/LanguageProvider";
 
-const pillarIcons = [
-  (
-    <svg key="expert" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="16" cy="11" r="6" />
-      <path d="M5 28c1.5-6 5.5-9 11-9s9.5 3 11 9" />
-      <path d="M13 11l2 2 4-4" />
-    </svg>
-  ),
-  (
-    <svg key="tech" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="10" y="10" width="12" height="12" rx="2" />
-      <path d="M16 4v6M16 22v6M4 16h6M22 16h6M7 7l4.5 4.5M25 7l-4.5 4.5M7 25l4.5-4.5M25 25l-4.5-4.5" />
-    </svg>
-  ),
-  (
-    <svg key="global" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="16" cy="16" r="12" />
-      <path d="M4 16h24M16 4c-5.5 5-5.5 19 0 24M16 4c5.5 5 5.5 19 0 24" />
-    </svg>
-  ),
-];
-
-function HatchHeading() {
-  return (
-    <svg viewBox="0 0 1180 150" className="w-full max-w-5xl" role="img" aria-label="INDUSTRIAL AI">
-      <defs>
-        <pattern id="hatch-tech" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)">
-          <line x1="0" y1="0" x2="0" y2="7" stroke="#d9d9d9" strokeWidth="2.5" />
-        </pattern>
-      </defs>
-      <text
-        x="0"
-        y="118"
-        fontFamily="var(--font-geist-sans), sans-serif"
-        fontSize="132"
-        fontWeight="800"
-        letterSpacing="2"
-        fill="url(#hatch-tech)"
-      >
-        INDUSTRIAL AI
-      </text>
-    </svg>
-  );
-}
-
 export default function TechLeadership() {
   const t = useT();
 
   const pillars = [
     {
+      stat: "20",
+      unit: t("년", "yrs"),
       title: t("전문가의 통찰", "Expert insight"),
       description: t(
-        "20년 경력의 무역·물류 전문가가 현장의 문제를 정의하고, AI가 풀 가치가 있는 과제를 선별합니다.",
-        "Trade and logistics experts with 20 years in the field define the problems worth solving with AI.",
+        "무역·물류 전문가가 현장의 문제를 정의하고, AI가 풀 가치가 있는 과제를 선별합니다.",
+        "Trade and logistics experts define the problems worth solving with AI.",
       ),
     },
     {
+      stat: "100",
+      unit: "%",
       title: t("자체 AI 기술", "Proprietary AI"),
       description: t(
-        "범용 모델이 아닌, 물류 현장 데이터로 학습한 자체 비전·예측 모델을 직접 설계하고 개선합니다.",
-        "Not off-the-shelf models — we design and refine our own vision and forecasting models trained on real logistics data.",
+        "물류 현장 데이터로 학습한 자체 비전·예측 모델을 직접 설계하고 개선합니다.",
+        "Our own vision and forecasting models, trained on real logistics data.",
       ),
     },
     {
+      stat: "3",
+      unit: t("개국", ""),
       title: t("글로벌 검증", "Globally validated"),
       description: t(
-        "국내외 항만·창고 현장에 적용되어 성능이 검증된 솔루션만 고객에게 제공합니다.",
-        "We only ship solutions whose performance is proven in ports and warehouses at home and abroad.",
+        "한·미·중 항만·창고 현장에 적용되어 성능이 검증된 솔루션만 제공합니다.",
+        "Only solutions proven in ports and warehouses across Korea, the US, and China.",
       ),
     },
   ];
 
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[1280px] px-4 py-16 lg:px-8 lg:py-24">
-        <HatchHeading />
+      <div className="mx-auto max-w-[1280px] px-4 py-20 lg:px-8 lg:py-28">
+        <h2 className="mx-auto max-w-2xl text-center text-3xl font-extrabold leading-snug tracking-tight sm:text-4xl">
+          {t(
+            "전문가의 통찰에 AI를 더해 산업마다 다른 문제를 풀어냅니다",
+            "Expert insight plus AI — solving each industry's distinct problems",
+          )}
+        </h2>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-20">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-[44px] lg:leading-[1.15]">
-            {t("현장에서 검증한 AI 기술로", "Field-tested AI for the")}
-            <br />
-            {t("한·미·중 물류를 연결합니다", "Korea–US–China corridor")}
-          </h2>
-          <p className="max-w-md text-lg leading-relaxed text-gray-600 lg:justify-self-end lg:self-end">
-            {t(
-              "전문가의 통찰에 AI를 더했습니다. 산업마다 다른 현장의 문제를 정확히 정의하고, 직접 만든 AI 기술로 꾸준히 개선해 나갑니다.",
-              "Expert insight, plus AI. We carefully define each industry's field problems and keep improving with AI technology we build ourselves.",
-            )}
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-4 border-t border-gray-200 pt-10 md:grid-cols-3">
-          {pillars.map((pillar, i) => (
-            <div key={pillar.title} className="rounded-lg bg-[#f6f6f6] p-8">
-              <span className="inline-flex text-black [&>svg]:h-9 [&>svg]:w-9">
-                {pillarIcons[i]}
-              </span>
-              <h3 className="mt-5 text-xl font-bold">{pillar.title}</h3>
-              <p className="mt-3 leading-relaxed text-gray-600">
+        <div className="mx-auto mt-16 grid max-w-4xl gap-14 text-center sm:grid-cols-3">
+          {pillars.map((pillar) => (
+            <div key={pillar.title}>
+              <p className="relative inline-block text-5xl font-extrabold tracking-tight">
+                {pillar.stat}
+                <span className="text-2xl">{pillar.unit}</span>
+                <span className="absolute -right-4 top-0 h-2.5 w-2.5 bg-mint" aria-hidden="true" />
+              </p>
+              <h3 className="mt-4 text-lg font-extrabold">{pillar.title}</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
                 {pillar.description}
               </p>
             </div>

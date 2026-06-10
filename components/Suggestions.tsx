@@ -3,47 +3,27 @@
 import Link from "next/link";
 import { useT } from "@/components/LanguageProvider";
 
-function QuoteIllo() {
-  return (
-    <svg viewBox="0 0 96 96" className="h-24 w-24" aria-hidden="true">
-      <rect x="14" y="22" width="68" height="52" rx="6" fill="#fff" stroke="#000" strokeWidth="2.5" />
-      <path d="M14 38h68" stroke="#000" strokeWidth="2.5" />
-      <rect x="24" y="48" width="28" height="6" rx="3" fill="#000" />
-      <rect x="24" y="60" width="40" height="6" rx="3" fill="#d4d4d4" />
-    </svg>
-  );
-}
-
-function ShipIllo() {
-  return (
-    <svg viewBox="0 0 96 96" className="h-24 w-24" aria-hidden="true">
-      <path d="M16 58h64l-8 18H24z" fill="#000" />
-      <rect x="30" y="40" width="14" height="18" fill="#fff" stroke="#000" strokeWidth="2.5" />
-      <rect x="46" y="32" width="14" height="26" fill="#fff" stroke="#000" strokeWidth="2.5" />
-      <path d="M10 82c6 4 12 4 18 0s12-4 18 0 12 4 18 0 12-4 18 0" stroke="#000" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function PartnerIllo() {
-  return (
-    <svg viewBox="0 0 96 96" className="h-24 w-24" aria-hidden="true">
-      <circle cx="34" cy="34" r="11" fill="#fff" stroke="#000" strokeWidth="2.5" />
-      <circle cx="64" cy="34" r="11" fill="#000" />
-      <path d="M16 76c2-12 9-19 18-19s16 7 18 19" fill="none" stroke="#000" strokeWidth="2.5" strokeLinecap="round" />
-      <path d="M50 72c2-9 7-15 14-15s12 6 14 15" fill="none" stroke="#000" strokeWidth="2.5" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function ShieldIllo() {
-  return (
-    <svg viewBox="0 0 96 96" className="h-24 w-24" aria-hidden="true">
-      <path d="M48 14l28 10v22c0 18-12 30-28 36-16-6-28-18-28-36V24z" fill="#fff" stroke="#000" strokeWidth="2.5" />
-      <path d="M36 48l9 9 16-18" stroke="#000" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
+/* 단색 라인 아이콘 — 가늘고 절제된 블루 */
+const icons = [
+  <svg key="quote" viewBox="0 0 32 32" fill="none" stroke="var(--accent)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-9 w-9">
+    <rect x="6" y="4" width="20" height="24" rx="2" />
+    <path d="M11 11h10M11 16h10M11 21h6" />
+  </svg>,
+  <svg key="track" viewBox="0 0 32 32" fill="none" stroke="var(--accent)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-9 w-9">
+    <circle cx="7" cy="25" r="3" />
+    <circle cx="25" cy="7" r="3" />
+    <path d="M9.5 22.5C14 18 13 14 16 11s6-2 6.5-1.5" strokeDasharray="3 3" />
+  </svg>,
+  <svg key="match" viewBox="0 0 32 32" fill="none" stroke="var(--accent)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-9 w-9">
+    <circle cx="11" cy="11" r="4" />
+    <circle cx="22" cy="12" r="3.5" />
+    <path d="M4 26c1-5.5 3.8-8 7-8s6 2.5 7 8M18.5 22c.8-2.8 2-4.5 3.5-4.5 2.4 0 4.4 2 5.5 7" />
+  </svg>,
+  <svg key="shield" viewBox="0 0 32 32" fill="none" stroke="var(--accent)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-9 w-9">
+    <path d="M16 4l11 4v7c0 7-4.5 11.5-11 13-6.5-1.5-11-6-11-13V8z" />
+    <path d="M11 16l3.5 3.5L21 13" />
+  </svg>,
+];
 
 export default function Suggestions() {
   const t = useT();
@@ -55,23 +35,20 @@ export default function Suggestions() {
         "품목과 목적지만 입력하면 운임·통관 비용을 바로 확인할 수 있습니다.",
         "Enter your item and destination to see freight and customs costs instantly.",
       ),
-      illo: <QuoteIllo />,
     },
     {
       title: t("선적 추적", "Shipment tracking"),
       description: t(
-        "한국–미국–중국 항로 위의 내 화물을 실시간으로 추적하세요.",
-        "Track your cargo in real time across Korea–US–China routes.",
+        "인천 출발부터 미국 내 라스트마일 배송까지 실시간으로 추적합니다.",
+        "Track in real time, from Incheon departure to last-mile delivery in the US.",
       ),
-      illo: <ShipIllo />,
     },
     {
       title: t("파트너 매칭", "Partner matching"),
       description: t(
-        "검증된 바이어와 공급처를 데이터 기반으로 연결해 드립니다.",
-        "Get matched with verified buyers and suppliers, backed by data.",
+        "거래 이력 데이터로 검증된 바이어와 공급처를 연결해 드립니다.",
+        "Get matched with buyers and suppliers vetted on real trade history.",
       ),
-      illo: <PartnerIllo />,
     },
     {
       title: t("안전 거래", "Secure trade"),
@@ -79,39 +56,36 @@ export default function Suggestions() {
         "에스크로 결제와 신용 평가로 처음 거래도 안심할 수 있습니다.",
         "Escrow payments and credit checks keep even first deals safe.",
       ),
-      illo: <ShieldIllo />,
     },
   ];
 
   return (
-    <section id="platform" className="bg-white">
-      <div className="mx-auto max-w-[1280px] px-4 py-12 lg:px-8 lg:py-16">
-        <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-          {t(
-            "Neo로 할 수 있는 다양한 것을 알아보세요",
-            "Explore what you can do with Neo",
-          )}
+    <section id="platform" className="bg-paper-warm">
+      <div className="mx-auto max-w-[1280px] px-4 py-20 lg:px-8 lg:py-28">
+        <p className="text-sm font-bold text-accent">{t("플랫폼", "Platform")}</p>
+        <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
+          {t("플랫폼이 대신하는 일", "What the platform handles for you")}
         </h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {cards.map((card) => (
-            <div
+
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {cards.map((card, i) => (
+            <Link
               key={card.title}
-              className="flex items-start justify-between gap-2 rounded-xl bg-[#f6f6f6] p-5"
+              href="#contact"
+              className="group rounded-lg border border-line bg-white p-7 transition-colors hover:border-accent"
             >
-              <div className="flex min-h-[180px] flex-col">
-                <h3 className="text-base font-bold">{card.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
-                  {card.description}
-                </p>
-                <Link
-                  href="#contact"
-                  className="mt-4 inline-flex w-fit rounded-full bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-200"
-                >
-                  {t("자세히 보기", "Details")}
-                </Link>
-              </div>
-              {card.illo}
-            </div>
+              {icons[i]}
+              <h3 className="mt-6 text-lg font-extrabold">{card.title}</h3>
+              <p className="mt-2.5 text-[15px] leading-relaxed text-ink-soft">
+                {card.description}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-accent">
+                {t("자세히 보기", "Learn more")}
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" />
+                </svg>
+              </span>
+            </Link>
           ))}
         </div>
       </div>

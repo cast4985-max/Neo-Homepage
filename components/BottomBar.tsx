@@ -3,16 +3,17 @@
 import Link from "next/link";
 import { useT } from "@/components/LanguageProvider";
 
+/* 모바일 전용 고정 CTA */
 export default function BottomBar() {
   const t = useT();
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 p-2">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-white p-2.5 lg:hidden">
       <Link
         href="#contact"
-        className="flex h-14 w-full items-center justify-center rounded-xl bg-black text-base font-medium text-white shadow-lg transition-opacity hover:opacity-90"
+        className="flex h-12 w-full items-center justify-center rounded bg-accent text-base font-bold text-white transition-colors hover:bg-accent-deep"
       >
-        {t("견적 보기", "See quotes")}
+        {t("견적 요청하기", "Request a quote")}
       </Link>
     </div>
   );
