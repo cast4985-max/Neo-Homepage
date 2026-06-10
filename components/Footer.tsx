@@ -75,11 +75,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col gap-6 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
           <p className="text-xs leading-relaxed text-white/40">
-            {t(
-              "서울특별시 강남구 테헤란로 000, Neo Trading Network Inc. · 대표: 홍길동 · 사업자등록번호: 000-00-00000",
-              "Neo Trading Network Inc., Teheran-ro 000, Gangnam-gu, Seoul",
-            )}
-            <br />© 2026 Neo Trading Network Inc. All rights reserved.
+            © 2026 Neo Trading Network Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm">
             <button
